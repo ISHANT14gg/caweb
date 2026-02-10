@@ -27,7 +27,7 @@ export default function TypewriterText({ text, className = "", delay = 0 }: Type
                 type: "spring",
                 damping: 12,
                 stiffness: 100
-            }
+            } as const
         },
         hidden: {
             opacity: 0,
@@ -36,7 +36,7 @@ export default function TypewriterText({ text, className = "", delay = 0 }: Type
                 type: "spring",
                 damping: 12,
                 stiffness: 100
-            }
+            } as const
         }
     };
 
