@@ -1,25 +1,19 @@
 import Link from 'next/link';
-import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { Phone, MapPin, Facebook } from 'lucide-react';
 
 const Footer = () => {
     return (
-        <footer className="bg-gray-900 text-white pt-12 pb-8">
+        <footer className="bg-primary text-white pt-12 pb-8">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-8">
                     {/* Brand & Inteoduction */}
                     <div className="col-span-1 md:col-span-1">
                         <span className="text-2xl font-bold text-white mb-4 block">Jyoti Thakur</span>
                         <p className="text-gray-400 text-sm mb-4">
-                            Providing expert financial services and strategic advice since 1995. Your trusted partner in growth.
+                            Structured GST, Income Tax, and statutory compliance services. Your trusted partner in disciplined growth.
                         </p>
                         <div className="flex space-x-4">
-                            <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                                <Linkedin className="h-5 w-5" />
-                            </a>
-                            <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                                <Twitter className="h-5 w-5" />
-                            </a>
-                            <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                            <a href="https://www.facebook.com/jyotithakurassociates/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                                 <Facebook className="h-5 w-5" />
                             </a>
                         </div>
@@ -52,19 +46,15 @@ const Footer = () => {
                         <h3 className="text-sm font-semibold text-gray-200 tracking-wider uppercase mb-4">Contact Us</h3>
                         <ul className="space-y-3">
                             <li className="flex items-start">
-                                <MapPin className="h-5 w-5 text-gray-400 mr-2 mt-0.5" />
+                                <MapPin className="h-5 w-5 text-gray-400 mr-2 mt-0.5 flex-shrink-0" />
                                 <span className="text-gray-400 text-sm">
-                                    123 Business Tower, <br />
-                                    Connaught Place, New Delhi - 110001
+                                    Mehre, Barsar, <br />
+                                    Himachal Pradesh 174305
                                 </span>
                             </li>
                             <li className="flex items-center">
-                                <Phone className="h-5 w-5 text-gray-400 mr-2" />
-                                <span className="text-gray-400 text-sm">+91 98765 43210</span>
-                            </li>
-                            <li className="flex items-center">
-                                <Mail className="h-5 w-5 text-gray-400 mr-2" />
-                                <span className="text-gray-400 text-sm">info@jyotithakur.com</span>
+                                <Phone className="h-5 w-5 text-gray-400 mr-2 flex-shrink-0" />
+                                <a href="tel:+919805931332" className="text-gray-400 hover:text-white text-sm transition-colors">+91 98059 31332</a>
                             </li>
                         </ul>
                     </div>
@@ -72,7 +62,7 @@ const Footer = () => {
 
                 <div className="border-t border-gray-800 pt-8 mt-8 text-center md:text-left">
                     <p className="text-gray-500 text-sm">
-                        &copy; {new Date().getFullYear()} Jyoti Thakur. All rights reserved.
+                        &copy; {new Date().getFullYear()} Jyoti Thakur Associates. All rights reserved.
                     </p>
                 </div>
             </div>

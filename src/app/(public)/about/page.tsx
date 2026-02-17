@@ -53,7 +53,7 @@ export default function AboutPage() {
 
                         <div className="border-l-4 border-orange-500 pl-4 mb-8">
                             <p className="italic text-gray-700 font-medium">
-                                "Our commitment is to provide high-quality services with integrity, objectivity, and professionalism."
+                                &quot;Our commitment is to provide high-quality services with integrity, objectivity, and professionalism.&quot;
                             </p>
                         </div>
 
@@ -190,7 +190,7 @@ export default function AboutPage() {
                     <ScrollAnimation className="flex flex-col md:flex-row items-center justify-between gap-12" direction="up">
                         <div className="max-w-2xl">
                             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                                Let's Discuss Your Business Goals & Schedule A Free Consultation Today
+                                Let&apos;s Discuss Your Business Goals & Schedule A Free Consultation Today
                             </h2>
                             <p className="text-blue-100 text-lg mb-8">
                                 Connect with our experts to find the right financial solutions for your business growth. We are just a call away.

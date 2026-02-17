@@ -50,7 +50,7 @@ const Sidebar = ({ role }: { role: 'admin' | 'client' }) => {
     };
 
     return (
-        <div className="flex flex-col w-64 bg-blue-900 min-h-screen text-white">
+        <div className="flex flex-col w-64 bg-primary min-h-screen text-white">
             <div className="flex items-center justify-center h-20 border-b border-blue-800">
                 <h1 className="text-2xl font-bold">Jyoti Thakur</h1>
             </div>

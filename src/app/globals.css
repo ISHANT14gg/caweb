@@ -1,5 +1,18 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 @theme {
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
@@ -21,70 +34,79 @@
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
+
+  /* Client Brand Colors */
+  --color-navy: #0B1F3A;
+  --color-navy-light: #132B50;
+  --color-navy-deep: #0F2B46;
+  --color-gold: #C9A227;
+  --color-gold-muted: #C8A951;
+  --color-charcoal: #2E2E2E;
+  --color-soft-grey: #F4F6F8;
+  --color-border-soft: #E2E6EA;
+  --color-divider: #ECEFF2;
+  --color-label: #7A7F86;
 }
 
 :root {
-  /* Reference Theme: Deep Blue & Vibrant Orange */
-  --primary: #0f285d;
+  /* Primary: Deep Navy Blue (Client Spec) */
+  --primary: #0B1F3A;
   --primary-foreground: #ffffff;
 
-  --secondary: #f97316;
-  /* Orange */
+  /* Secondary/Accent: Premium Gold (Client Spec) */
+  --secondary: #C9A227;
   --secondary-foreground: #ffffff;
 
-  --accent: #f97316;
-  /* Orange accent */
+  --accent: #C8A951;
   --accent-foreground: #ffffff;
 
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
 
-  --muted: #f3f4f6;
-  --muted-foreground: #6b7280;
+  --muted: #F4F6F8;
+  --muted-foreground: #7A7F86;
 
   --card: #ffffff;
-  --card-foreground: #1f2937;
+  --card-foreground: #2E2E2E;
 
   --popover: #ffffff;
-  --popover-foreground: #1f2937;
+  --popover-foreground: #2E2E2E;
 
-  --border: #e5e7eb;
-  --input: #e5e7eb;
-  --ring: #1e3a8a;
+  --border: #E2E6EA;
+  --input: #E2E6EA;
+  --ring: #0B1F3A;
 
   --radius: 0.5rem;
 
   --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-
-    --primary: #3b82f6;
-    /* blue-500 for dark mode contrast */
-    --primary-foreground: #ffffff;
-
-    --secondary: #fbbf24;
-    /* amber-400 */
-    --secondary-foreground: #000000;
-
-    --card: #171717;
-    --card-foreground: #ededed;
-
-    --popover: #171717;
-    --popover-foreground: #ededed;
-
-    --border: #262626;
-    --input: #262626;
-    --ring: #3b82f6;
-  }
+  --foreground: #2E2E2E;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F4F6F8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C9A227;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0B1F3A;
 }
