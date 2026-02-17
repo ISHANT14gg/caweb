@@ -42,7 +42,7 @@ export default function RootLayout({
         >
           {children}
 
-          <FloatingActions />
+          <FloatingActions /> {/* Force Vercel Update */}
         </body>
       </html>
     </ClerkProvider>
