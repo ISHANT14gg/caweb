@@ -5,21 +5,31 @@ import type { NextRequest } from 'next/server'
 
 export async function middleware(req: NextRequest) {
     const res = NextResponse.next()
-    const supabase = createMiddlewareClient({ req, res })
 
-    const { data: { session } } = await supabase.auth.getSession()
-
-    // Protect routes
-    if (req.nextUrl.pathname.startsWith('/portal') && !session) {
-        return NextResponse.redirect(new URL('/sign-in', req.url))
+    // Bypassing middleware if Supabase env vars are missing (prevents 500 error on public pages)
+    if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
+        console.warn("Middleware: Missing Supabase Environment Variables. Bypassing auth checks.")
+        // Block protected routes if env vars aren't set
+        if (req.nextUrl.pathname.startsWith('/portal') || (req.nextUrl.pathname.startsWith('/admin') && req.nextUrl.pathname !== '/admin/login')) {
+            return NextResponse.redirect(new URL('/sign-in', req.url))
+        }
+        return res
     }
 
-    if (req.nextUrl.pathname.startsWith('/admin')) {
-        if (!session) {
-            return NextResponse.redirect(new URL('/admin/login', req.url))
+    try {
+        const supabase = createMiddlewareClient({ req, res })
+        const { data: { session } } = await supabase.auth.getSession()
+
+        // Protect routes
+        if (req.nextUrl.pathname.startsWith('/portal') && !session) {
+            return NextResponse.redirect(new URL('/sign-in', req.url))
         }
-        // Check admin role from database using Supabase client to avoid Prisma Edge runtime issues
-        try {
+
+        if (req.nextUrl.pathname.startsWith('/admin')) {
+            if (!session) {
+                return NextResponse.redirect(new URL('/admin/login', req.url))
+            }
+            // Check admin role from database using Supabase client to avoid Prisma Edge runtime issues
             const { data: user } = await supabase
                 .from('User')
                 .select('role')
@@ -30,9 +40,12 @@ export async function middleware(req: NextRequest) {
                 // Redirect to portal if not admin
                 return NextResponse.redirect(new URL('/portal', req.url))
             }
-        } catch (e) {
-            console.error("Middleware DB check failed", e);
-            // Fallback or ignore if DB access fails in Edge
+        }
+    } catch (e) {
+        console.error("Middleware error:", e)
+        // Fallback for protected routes
+        if (req.nextUrl.pathname.startsWith('/portal') || (req.nextUrl.pathname.startsWith('/admin') && req.nextUrl.pathname !== '/admin/login')) {
+            return NextResponse.redirect(new URL('/sign-in', req.url))
         }
     }
 
