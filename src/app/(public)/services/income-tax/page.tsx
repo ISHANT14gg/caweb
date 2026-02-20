@@ -8,19 +8,19 @@ export default function IncomeTaxReturnPage() {
     return (
         <main className="bg-gray-50 min-h-screen">
             {/* Hero Section */}
-            <section className="relative bg-blue-900 text-white py-20 overflow-hidden">
-                <div className="absolute inset-0 bg-blue-800 opacity-50"></div>
+            <section className="relative bg-navy-deep text-white py-20 overflow-hidden">
+                <div className="absolute inset-0 bg-navy opacity-50"></div>
                 <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between">
                     <div className="md:w-1/2 mb-10 md:mb-0 z-10">
                         <h1 className="text-4xl md:text-5xl font-serif font-bold mb-6 leading-tight">
                             Income Tax Return (ITR) Filing
                         </h1>
-                        <p className="text-xl text-blue-100 mb-8 max-w-lg">
+                        <p className="text-xl text-gray-300 mb-8 max-w-lg">
                             Expert-assisted ITR filing services for individuals, businesses, and professionals.
                             Ensure compliance and maximize your refunds with Jyoti Thakur.
                         </p>
                         <div className="flex gap-4">
-                            <Link href="/contact" className="px-8 py-3 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded transition-colors shadow-lg">
+                            <Link href="/contact" className="px-8 py-3 bg-gold hover:brightness-110 text-navy-deep font-bold rounded transition-all shadow-lg">
                                 File ITR Now
                             </Link>
                         </div>
@@ -28,7 +28,7 @@ export default function IncomeTaxReturnPage() {
                     {/* Abstract Shape/Image Placeholder */}
                     <div className="md:w-1/2 flex justify-center z-10">
                         <div className="w-80 h-80 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20">
-                            <FileText className="w-40 h-40 text-blue-200 opacity-80" />
+                            <FileText className="w-40 h-40 text-gray-300 opacity-80" />
                         </div>
                     </div>
                 </div>
@@ -44,7 +44,7 @@ export default function IncomeTaxReturnPage() {
                         {/* Introduction */}
                         <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
                             <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                                <span className="w-1 h-8 bg-orange-500 rounded-full"></span>
+                                <span className="w-1 h-8 bg-gold rounded-full"></span>
                                 Overview
                             </h2>
                             <p className="text-gray-600 leading-relaxed mb-4">
@@ -60,7 +60,7 @@ export default function IncomeTaxReturnPage() {
                         {/* Documents Required */}
                         <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
                             <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
-                                <span className="w-1 h-8 bg-blue-600 rounded-full"></span>
+                                <span className="w-1 h-8 bg-gold rounded-full"></span>
                                 Documents Required for ITR Filing
                             </h2>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -85,7 +85,7 @@ export default function IncomeTaxReturnPage() {
                         {/* Filing Procedure */}
                         <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
                             <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
-                                <span className="w-1 h-8 bg-blue-600 rounded-full"></span>
+                                <span className="w-1 h-8 bg-gold rounded-full"></span>
                                 Online ITR Filing Procedure
                             </h2>
                             <div className="space-y-6">
@@ -97,7 +97,7 @@ export default function IncomeTaxReturnPage() {
                                     { step: 5, title: "e-Verification", desc: "Verify your return using Aadhaar OTP, Net Banking, or by sending a signed acknowledgement to CPC Bangalore." }
                                 ].map((step) => (
                                     <div key={step.step} className="flex gap-4">
-                                        <div className="flex-shrink-0 w-10 h-10 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center font-bold">
+                                        <div className="flex-shrink-0 w-10 h-10 bg-soft-grey text-gold rounded-full flex items-center justify-center font-bold">
                                             {step.step}
                                         </div>
                                         <div>
@@ -112,13 +112,13 @@ export default function IncomeTaxReturnPage() {
                         {/* FAQs */}
                         <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
                             <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
-                                <span className="w-1 h-8 bg-orange-500 rounded-full"></span>
+                                <span className="w-1 h-8 bg-gold rounded-full"></span>
                                 Frequently Asked Questions
                             </h2>
                             <div className="space-y-6">
                                 <div className="border-b border-gray-100 pb-4">
                                     <h3 className="font-bold text-gray-900 mb-2 flex items-center gap-2">
-                                        <HelpCircle className="w-4 h-4 text-blue-500" />
+                                        <HelpCircle className="w-4 h-4 text-gold" />
                                         Is it necessary to file ITR if I have a loss?
                                     </h3>
                                     <p className="text-gray-600 pl-6">
@@ -127,7 +127,7 @@ export default function IncomeTaxReturnPage() {
                                 </div>
                                 <div className="border-b border-gray-100 pb-4">
                                     <h3 className="font-bold text-gray-900 mb-2 flex items-center gap-2">
-                                        <HelpCircle className="w-4 h-4 text-blue-500" />
+                                        <HelpCircle className="w-4 h-4 text-gold" />
                                         What happens if I don't file ITR?
                                     </h3>
                                     <p className="text-gray-600 pl-6">
@@ -136,7 +136,7 @@ export default function IncomeTaxReturnPage() {
                                 </div>
                                 <div className="pb-4">
                                     <h3 className="font-bold text-gray-900 mb-2 flex items-center gap-2">
-                                        <HelpCircle className="w-4 h-4 text-blue-500" />
+                                        <HelpCircle className="w-4 h-4 text-gold" />
                                         How can I check my ITR status?
                                     </h3>
                                     <p className="text-gray-600 pl-6">
@@ -152,23 +152,23 @@ export default function IncomeTaxReturnPage() {
                     <div className="lg:col-span-1 space-y-8">
 
                         {/* Why Choose Us */}
-                        <div className="bg-blue-900 text-white p-6 rounded-xl shadow-lg">
-                            <h3 className="text-xl font-bold mb-4 border-b border-blue-700 pb-2">Why Choose Jyoti Thakur?</h3>
+                        <div className="bg-navy-deep text-white p-6 rounded-xl shadow-lg">
+                            <h3 className="text-xl font-bold mb-4 border-b border-navy-light pb-2">Why Choose Jyoti Thakur?</h3>
                             <ul className="space-y-4">
                                 <li className="flex gap-3">
-                                    <Shield className="w-6 h-6 text-orange-400 flex-shrink-0" />
-                                    <span className="text-blue-100 text-sm">100% Data Security & Confidentiality</span>
+                                    <Shield className="w-6 h-6 text-gold flex-shrink-0" />
+                                    <span className="text-gray-300 text-sm">100% Data Security & Confidentiality</span>
                                 </li>
                                 <li className="flex gap-3">
-                                    <Award className="w-6 h-6 text-orange-400 flex-shrink-0" />
-                                    <span className="text-blue-100 text-sm">Expert CA Assisted Filing</span>
+                                    <Award className="w-6 h-6 text-gold flex-shrink-0" />
+                                    <span className="text-gray-300 text-sm">Expert CA Assisted Filing</span>
                                 </li>
                                 <li className="flex gap-3">
-                                    <Clock className="w-6 h-6 text-orange-400 flex-shrink-0" />
-                                    <span className="text-blue-100 text-sm">Fast Turnaround Time</span>
+                                    <Clock className="w-6 h-6 text-gold flex-shrink-0" />
+                                    <span className="text-gray-300 text-sm">Fast Turnaround Time</span>
                                 </li>
                             </ul>
-                            <Link href="/contact" className="mt-6 block w-full bg-orange-500 hover:bg-orange-600 text-white text-center font-bold py-3 rounded transition-colors">
+                            <Link href="/contact" className="mt-6 block w-full bg-gold hover:brightness-110 text-navy-deep text-center font-bold py-3 rounded transition-all">
                                 Get Expert Consultation
                             </Link>
                         </div>
@@ -179,7 +179,7 @@ export default function IncomeTaxReturnPage() {
                             <ul className="space-y-2">
                                 {['GST Registration', 'Company Incorporation', 'Tax Audit', 'TDS Return'].map(service => (
                                     <li key={service}>
-                                        <Link href="/services" className="text-gray-600 hover:text-blue-600 flex items-center justify-between group transition-colors">
+                                        <Link href="/services" className="text-gray-600 hover:text-gold flex items-center justify-between group transition-colors">
                                             <span>{service}</span>
                                             <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                                         </Link>
@@ -193,13 +193,13 @@ export default function IncomeTaxReturnPage() {
             </section>
 
             {/* Bottom CTA Strip */}
-            <section className="bg-orange-500 py-8">
+            <section className="bg-navy-deep py-8">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between text-center md:text-left gap-4">
                     <div>
                         <h2 className="text-2xl font-bold text-white mb-1">Ready to file your taxes?</h2>
-                        <p className="text-orange-100">Don't wait for the last date. Avoid penalties today.</p>
+                        <p className="text-gray-400">Don't wait for the last date. Avoid penalties today.</p>
                     </div>
-                    <Link href="/contact" className="px-8 py-3 bg-white text-orange-600 font-bold rounded shadow-lg hover:bg-gray-100 transition-colors">
+                    <Link href="/contact" className="px-8 py-3 bg-gold text-navy-deep font-bold rounded shadow-lg hover:brightness-110 transition-all">
                         Contact Us Now
                     </Link>
                 </div>

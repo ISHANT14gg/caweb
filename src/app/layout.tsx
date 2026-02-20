@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   description: "Structured GST, Income Tax, and statutory compliance services. Virtual CFO support, financial structuring, business advisory, and financial literacy initiatives.",
 };
 
-import { ClerkProvider } from '@clerk/nextjs'
+
 import FloatingActions from '@/components/ui/FloatingActions';
 
 // ... existing imports
@@ -35,16 +35,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
-      <html lang="en">
-        <body
-          className={`${poppins.variable} ${geistMono.variable} ${merriweather.variable} antialiased relative font-sans`}
-        >
-          {children}
 
-          <FloatingActions /> {/* Vercel Access Retry */}
-        </body>
-      </html>
-    </ClerkProvider>
+    <html lang="en" suppressHydrationWarning>
+      <body
+        suppressHydrationWarning
+        className={`${poppins.variable} ${geistMono.variable} ${merriweather.variable} antialiased relative font-sans`}
+      >
+        {children}
+
+        <FloatingActions /> {/* Vercel Access Retry */}
+      </body>
+    </html>
+
   );
 }

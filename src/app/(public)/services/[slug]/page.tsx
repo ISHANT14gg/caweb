@@ -103,7 +103,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center p-4">
                 <h1 className="text-2xl font-bold text-gray-900 mb-4">Service Not Found</h1>
                 <p className="text-gray-600 mb-6">The service you are looking for does not exist.</p>
-                <Link href="/services" className="text-blue-600 hover:underline flex items-center">
+                <Link href="/services" className="text-gold hover:underline flex items-center">
                     <ArrowLeft className="h-4 w-4 mr-2" /> Back to Services
                 </Link>
             </div>
@@ -115,9 +115,9 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
     return (
         <div className="bg-white">
             {/* Hero Section */}
-            <div className="bg-blue-900 text-white py-16">
+            <div className="bg-navy-deep text-white py-16">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <Link href="/services" className="inline-flex items-center text-blue-200 hover:text-white mb-6 transition-colors">
+                    <Link href="/services" className="inline-flex items-center text-gray-300 hover:text-white mb-6 transition-colors">
                         <ArrowLeft className="h-4 w-4 mr-2" /> Back to All Services
                     </Link>
                     <div className="flex items-center">
@@ -155,17 +155,17 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
                     {/* Sidebar CTA */}
                     <div className="lg:col-span-1">
-                        <div className="bg-blue-50 p-6 rounded-xl border border-blue-100 sticky top-24">
-                            <h3 className="text-xl font-bold text-blue-900 mb-4">Interested in this service?</h3>
-                            <p className="text-blue-800 mb-6 text-sm">
+                        <div className="bg-soft-grey p-6 rounded-xl border border-border-soft sticky top-24">
+                            <h3 className="text-xl font-bold text-navy-deep mb-4">Interested in this service?</h3>
+                            <p className="text-charcoal mb-6 text-sm">
                                 Get a customized quote or schedule a consultation with our experts.
                             </p>
-                            <Link href="/contact" className="block w-full py-3 px-4 bg-blue-600 text-white font-bold rounded-lg text-center hover:bg-blue-700 transition-colors shadow-md">
+                            <Link href="/contact" className="block w-full py-3 px-4 bg-navy-deep text-white font-bold rounded-lg text-center hover:bg-navy-light transition-colors shadow-md">
                                 Contact Us Now
                             </Link>
-                            <div className="mt-6 pt-6 border-t border-blue-200">
-                                <p className="text-sm text-blue-800 font-medium mb-2">Need urgent help?</p>
-                                <p className="text-lg font-bold text-blue-900">+91 98765 43210</p>
+                            <div className="mt-6 pt-6 border-t border-divider">
+                                <p className="text-sm text-charcoal font-medium mb-2">Need urgent help?</p>
+                                <p className="text-lg font-bold text-navy-deep">+91 98059 31332</p>
                             </div>
                         </div>
                     </div>

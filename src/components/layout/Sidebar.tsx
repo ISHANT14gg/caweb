@@ -51,16 +51,16 @@ const Sidebar = ({ role }: { role: 'admin' | 'client' }) => {
 
     return (
         <div className="flex flex-col w-64 bg-primary min-h-screen text-white">
-            <div className="flex items-center justify-center h-20 border-b border-blue-800">
+            <div className="flex items-center justify-center h-20 border-b border-navy-light">
                 <h1 className="text-2xl font-bold">Jyoti Thakur</h1>
             </div>
 
             {/* Profile Switcher (Only for Client) */}
             {role === 'client' && (
-                <div className="px-4 py-4 border-b border-blue-800 relative">
+                <div className="px-4 py-4 border-b border-navy-light relative">
                     <button
                         onClick={() => setIsProfileMenuOpen(!isProfileMenuOpen)}
-                        className="w-full flex items-center justify-between px-3 py-2 bg-blue-800 rounded-md hover:bg-blue-700 transition-colors"
+                        className="w-full flex items-center justify-between px-3 py-2 bg-navy-light rounded-md hover:bg-navy transition-colors"
                     >
                         <div className="flex items-center">
                             {profileType === 'individual' ? <User className="h-4 w-4 mr-2" /> : <Building2 className="h-4 w-4 mr-2" />}
@@ -97,8 +97,8 @@ const Sidebar = ({ role }: { role: 'admin' | 'client' }) => {
                                 key={link.name}
                                 href={link.href}
                                 className={`flex items-center px-4 py-3 text-sm font-medium rounded-md transition-colors ${isActive
-                                    ? 'bg-blue-800 text-white'
-                                    : 'text-blue-100 hover:bg-blue-800 hover:text-white'
+                                    ? 'bg-navy-light text-white'
+                                    : 'text-gray-300 hover:bg-navy-light hover:text-white'
                                     }`}
                             >
                                 <link.icon className="mr-3 h-5 w-5" aria-hidden="true" />
@@ -108,10 +108,10 @@ const Sidebar = ({ role }: { role: 'admin' | 'client' }) => {
                     })}
                 </nav>
             </div>
-            <div className="p-4 border-t border-blue-800">
+            <div className="p-4 border-t border-navy-light">
                 <Link
                     href="/login"
-                    className="flex items-center px-4 py-3 text-sm font-medium text-blue-100 rounded-md hover:bg-blue-800 hover:text-white transition-colors"
+                    className="flex items-center px-4 py-3 text-sm font-medium text-gray-300 rounded-md hover:bg-navy-light hover:text-white transition-colors"
                 >
                     <LogOut className="mr-3 h-5 w-5" />
                     Logout

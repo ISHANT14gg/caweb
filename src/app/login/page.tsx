@@ -33,7 +33,7 @@ export default function LoginPage() {
                     <Home className="h-5 w-5" />
                     <span>Back to Home</span>
                 </Link>
-                <h2 className="text-center text-3xl font-extrabold text-blue-900">
+                <h2 className="text-center text-3xl font-extrabold text-navy-deep">
                     Jyoti Thakur
                 </h2>
                 <h2 className="mt-2 text-center text-2xl font-bold text-gray-900">
@@ -63,7 +63,7 @@ export default function LoginPage() {
                                     required
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
-                                    className="focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 sm:text-sm border-gray-300 rounded-md p-2 border text-gray-900"
+                                    className="focus:ring-gold focus:border-gold block w-full pl-10 sm:text-sm border-gray-300 rounded-md p-2 border text-gray-900"
                                     placeholder="client@example.com"
                                 />
                             </div>
@@ -85,7 +85,7 @@ export default function LoginPage() {
                                     required
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
-                                    className="focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 sm:text-sm border-gray-300 rounded-md p-2 border text-gray-900"
+                                    className="focus:ring-gold focus:border-gold block w-full pl-10 sm:text-sm border-gray-300 rounded-md p-2 border text-gray-900"
                                     placeholder="••••••••"
                                 />
                             </div>
@@ -97,7 +97,7 @@ export default function LoginPage() {
                                     id="remember-me"
                                     name="remember-me"
                                     type="checkbox"
-                                    className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                                    className="h-4 w-4 text-navy-deep focus:ring-gold border-gray-300 rounded"
                                 />
                                 <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-900">
                                     Remember me
@@ -105,7 +105,7 @@ export default function LoginPage() {
                             </div>
 
                             <div className="text-sm">
-                                <a href="#" className="font-medium text-blue-600 hover:text-blue-500">
+                                <a href="#" className="font-medium text-gold hover:text-gold-muted">
                                     Forgot your password?
                                 </a>
                             </div>
@@ -115,7 +115,7 @@ export default function LoginPage() {
                             <button
                                 type="submit"
                                 disabled={isLoading}
-                                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-900 hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-navy-deep hover:bg-navy-light focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gold disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                             >
                                 {isLoading ? 'Signing in...' : 'Sign in'}
                                 {!isLoading && <ArrowRight className="ml-2 h-4 w-4" />}
@@ -136,7 +136,7 @@ export default function LoginPage() {
                         </div>
 
                         <div className="mt-6 grid grid-cols-2 gap-3">
-                            <div className="text-xs text-center p-2 bg-blue-50 rounded text-blue-800">
+                            <div className="text-xs text-center p-2 bg-soft-grey rounded text-navy-deep">
                                 <span className="font-bold block">Client:</span> client@demo.com
                             </div>
                             <div className="text-xs text-center p-2 bg-amber-50 rounded text-amber-800">

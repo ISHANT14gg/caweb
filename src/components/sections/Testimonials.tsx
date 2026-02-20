@@ -35,8 +35,8 @@ export default function Testimonials() {
         <section className="py-20 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <ScrollAnimation direction="up" className="text-center mb-16">
-                    <span className="text-orange-500 font-bold tracking-widest text-sm uppercase mb-4 block">TESTIMONIALS</span>
-                    <h2 className="text-3xl md:text-5xl font-serif font-bold text-blue-900 mb-6">
+                    <span className="text-gold font-bold tracking-widest text-sm uppercase mb-4 block">TESTIMONIALS</span>
+                    <h2 className="text-3xl md:text-5xl font-serif font-bold text-navy-deep mb-6">
                         What Our Clients Say
                     </h2>
                     <p className="text-gray-500 text-lg max-w-2xl mx-auto">
@@ -49,7 +49,7 @@ export default function Testimonials() {
                         <ScrollAnimation key={index} delay={index * 0.1} type="scale">
                             <div className="bg-gray-50 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 h-full flex flex-col">
                                 <div className="flex items-center gap-3 mb-4">
-                                    <div className="h-10 w-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold">
+                                    <div className="h-10 w-10 bg-soft-grey rounded-full flex items-center justify-center text-gold font-bold">
                                         {review.name[0]}
                                     </div>
                                     <div>

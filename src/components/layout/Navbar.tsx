@@ -12,7 +12,6 @@ const Navbar = () => {
         { name: 'HOME', href: '/' },
         { name: 'ABOUT US', href: '/about' },
         { name: 'SERVICES', href: '/services', hasDropdown: true },
-        { name: 'INDUSTRIES', href: '#', hasDropdown: true },
         { name: 'KNOWLEDGE BANK', href: '#', hasDropdown: true },
         { name: 'CONTACT-US', href: '/contact' },
     ];
@@ -96,7 +95,7 @@ const Navbar = () => {
                             <Link
                                 key={item.name}
                                 href={item.href}
-                                className="block px-3 py-3 rounded-md text-sm font-bold text-gray-700 hover:text-secondary hover:bg-blue-50 uppercase tracking-wide border-b border-gray-50 last:border-0"
+                                className="block px-3 py-3 rounded-md text-sm font-bold text-gray-700 hover:text-secondary hover:bg-soft-grey uppercase tracking-wide border-b border-gray-50 last:border-0"
                                 onClick={() => setIsOpen(false)}
                             >
                                 <div className="flex justify-between items-center">
