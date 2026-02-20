@@ -59,12 +59,12 @@ export default function Home() {
                 ]}
               />
 
-              <p className="text-sm lg:text-base text-gray-300 leading-relaxed mb-6 max-w-xl font-light">
+              <p className="text-sm lg:text-base text-gray-200 md:text-gray-300 leading-relaxed mb-6 max-w-xl font-light">
                 At Jyoti Thakur Associates, we provide structured GST, Income Tax, and statutory compliance services while partnering with SMEs, startups, professionals, and aspiring entrepreneurs through Virtual CFO support, financial structuring, business advisory, and financial literacy initiatives — enabling informed decisions, disciplined growth, and long-term stability.
               </p>
 
               {/* Authority Strip */}
-              <div className="flex flex-wrap gap-x-5 gap-y-2 text-xs text-gray-400 mb-6 tracking-wide">
+              <div className="flex flex-wrap gap-x-4 sm:gap-x-5 gap-y-3 sm:gap-y-2 text-xs text-gray-300 md:text-gray-400 mb-6 tracking-wide leading-relaxed">
                 <span>7+ Years of Professional Practice</span>
                 <span className="hidden sm:inline text-gold/40">|</span>
                 <span>1000+ Clients Served</span>
@@ -269,7 +269,7 @@ export default function Home() {
                 <h3 className="text-sm font-semibold text-navy mb-2 uppercase tracking-wide leading-snug">
                   {stat.title}
                 </h3>
-                <p className="text-xs text-label leading-relaxed">
+                <p className="text-xs text-label leading-relaxed break-words whitespace-normal px-2 sm:px-0">
                   {stat.desc}
                 </p>
               </motion.div>

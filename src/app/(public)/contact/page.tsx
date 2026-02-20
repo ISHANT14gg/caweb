@@ -53,16 +53,16 @@ export default function Contact() {
                             transition={{ duration: 0.7, ease: 'easeOut' }}
                             className="pt-4 lg:pt-0"
                         >
-                            <h1 className="text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight mb-4">
+                            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight mb-4">
                                 Contact Us
                             </h1>
-                            <p className="text-gray-300 text-base lg:text-lg leading-relaxed max-w-md mb-6 font-light">
+                            <p className="text-gray-200 md:text-gray-300 text-base lg:text-lg leading-relaxed max-w-md mb-6 font-light">
                                 We value integrity, transparency, and fiscal excellence. Partner with
                                 Jyoti Thakur Associates to build a sustainable financial legacy.
                             </p>
 
                             {/* Secure Portal Highlight */}
-                            <div className="bg-white/5 border border-white/10 rounded-xl p-4 mb-6 backdrop-blur-sm max-w-sm">
+                            <div className="bg-white/5 border border-white/10 rounded-xl p-3 md:p-4 mb-4 md:mb-6 backdrop-blur-sm max-w-sm">
                                 <div className="flex items-start gap-4">
                                     <div className="bg-gold/20 p-2 rounded-lg">
                                         <ShieldCheck className="h-5 w-5 text-gold" />
@@ -87,7 +87,7 @@ export default function Contact() {
                             initial={{ opacity: 0, x: 30 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
-                            className="bg-white rounded-2xl shadow-2xl p-5 lg:p-7 border border-gray-100"
+                            className="bg-white rounded-2xl shadow-2xl p-6 md:p-8 border border-gray-100"
                         >
                             <h2 className="text-xl lg:text-2xl font-bold text-navy-deep mb-5 tracking-tight">
                                 Get in Touch
@@ -121,21 +121,21 @@ export default function Contact() {
                                     <label className="text-[10px] font-bold uppercase tracking-widest text-label mb-2.5 block">
                                         Service Interest
                                     </label>
-                                    <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5">
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
                                         {services.map((service) => (
                                             <button
                                                 key={service.id}
                                                 type="button"
                                                 onClick={() => setSelectedService(service.id)}
-                                                className={`relative flex flex-col items-center justify-center gap-1.5 p-2.5 rounded-xl border transition-all duration-200 ${selectedService === service.id
+                                                className={`relative flex flex-row sm:flex-col items-center justify-start sm:justify-center gap-3 sm:gap-1.5 p-3 sm:p-2.5 rounded-xl border transition-all duration-200 ${selectedService === service.id
                                                     ? 'border-gold bg-gold/5 text-navy-deep ring-1 ring-gold shadow-md'
                                                     : 'border-border-soft bg-soft-grey/30 text-charcoal hover:border-gold/30'
                                                     }`}
                                             >
                                                 <service.icon className={`h-4 w-4 ${selectedService === service.id ? 'text-gold' : 'text-gray-400'}`} />
-                                                <span className="text-[9px] font-bold uppercase tracking-tight">{service.label}</span>
+                                                <span className="text-xs sm:text-[9px] font-bold uppercase tracking-tight">{service.label}</span>
                                                 {selectedService === service.id && (
-                                                    <motion.div layoutId="check" className="absolute -top-1.5 -right-1.5 bg-gold rounded-full p-0.5 shadow-sm z-10">
+                                                    <motion.div layoutId="check" className="absolute top-1/2 right-3 -translate-y-1/2 sm:translate-y-0 sm:-top-1.5 sm:right-auto sm:-translate-x-0 sm:left-auto sm:-right-1.5 disabled bg-gold rounded-full p-0.5 shadow-sm z-10 hidden sm:block">
                                                         <Check className="h-2 w-2 text-white" strokeWidth={4} />
                                                     </motion.div>
                                                 )}

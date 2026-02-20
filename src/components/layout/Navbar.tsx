@@ -27,11 +27,11 @@ const Navbar = () => {
                                 JYOTI THAKUR
                             </h1>
                             <div className="flex items-center gap-3">
-                                <div className="h-[1px] bg-secondary w-16"></div>
+                                <div className="hidden md:block h-[1px] bg-secondary w-16"></div>
                                 <span className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-gray-500 font-medium whitespace-nowrap">
                                     CHARTERED ACCOUNTANTS
                                 </span>
-                                <div className="h-[1px] bg-secondary w-16"></div>
+                                <div className="hidden md:block h-[1px] bg-secondary w-16"></div>
                             </div>
                         </Link>
                     </div>
