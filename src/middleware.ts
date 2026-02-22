@@ -7,7 +7,7 @@ export async function middleware(req: NextRequest) {
     const nonce = Buffer.from(crypto.randomUUID()).toString('base64')
     const cspHeader = `
         default-src 'self';
-        script-src 'self' 'nonce-${nonce}' 'strict-dynamic';
+        script-src 'self' 'nonce-${nonce}' 'strict-dynamic' 'unsafe-eval';
         style-src 'self' 'unsafe-inline';
         img-src 'self' blob: data: https://images.unsplash.com;
         font-src 'self' data:;
