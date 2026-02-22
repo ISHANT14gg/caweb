@@ -5,6 +5,7 @@ import type { NextRequest } from 'next/server'
 
 export async function middleware(req: NextRequest) {
     const nonce = Buffer.from(crypto.randomUUID()).toString('base64')
+    const isProd = process.env.NODE_ENV === 'production'
     const cspHeader = `
         default-src 'self';
         script-src 'self' 'nonce-${nonce}' 'strict-dynamic' 'unsafe-eval';
@@ -16,7 +17,7 @@ export async function middleware(req: NextRequest) {
         form-action 'self';
         frame-ancestors 'none';
         frame-src 'self' https://www.google.com/;
-        connect-src 'self' https://*.supabase.co wss://*.supabase.co ws://localhost:* http://localhost:*;
+        connect-src 'self' https://*.supabase.co wss://*.supabase.co ${isProd ? '' : 'ws://localhost:* http://localhost:*'};
     `
     const contentSecurityPolicyHeaderValue = cspHeader.replace(/\s{2,}/g, ' ').trim()
 
