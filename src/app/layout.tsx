@@ -29,14 +29,21 @@ import FloatingActions from '@/components/ui/FloatingActions';
 
 // ... existing imports
 
-export default function RootLayout({
+import { headers } from 'next/headers'
+
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
+  const nonceList = await headers();
+  const nonce = nonceList.get('x-nonce') ?? undefined;
 
-    <html lang="en" suppressHydrationWarning>
+  return (
+    <html lang="en" suppressHydrationWarning nonce={nonce}>
+      <head>
+        <meta property="csp-nonce" content={nonce} />
+      </head>
       <body
         suppressHydrationWarning
         className={`${poppins.variable} ${geistMono.variable} ${merriweather.variable} antialiased relative font-sans`}
@@ -46,6 +53,5 @@ export default function RootLayout({
         <FloatingActions /> {/* Vercel Access Retry */}
       </body>
     </html>
-
   );
 }
