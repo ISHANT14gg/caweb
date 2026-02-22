@@ -4,7 +4,35 @@ import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
 export async function middleware(req: NextRequest) {
-    const res = NextResponse.next()
+    const nonce = Buffer.from(crypto.randomUUID()).toString('base64')
+    const cspHeader = `
+        default-src 'self';
+        script-src 'self' 'nonce-${nonce}' 'strict-dynamic';
+        style-src 'self' 'unsafe-inline';
+        img-src 'self' blob: data: https://images.unsplash.com;
+        font-src 'self' data:;
+        object-src 'none';
+        base-uri 'self';
+        form-action 'self';
+        frame-ancestors 'none';
+        frame-src 'self' https://www.google.com/;
+        connect-src 'self' https://*.supabase.co wss://*.supabase.co ws://localhost:* http://localhost:*;
+    `
+    const contentSecurityPolicyHeaderValue = cspHeader.replace(/\s{2,}/g, ' ').trim()
+
+    const requestHeaders = new Headers(req.headers)
+    requestHeaders.set('x-nonce', nonce)
+    requestHeaders.set('Content-Security-Policy', contentSecurityPolicyHeaderValue)
+
+    const res = NextResponse.next({
+        request: {
+            headers: requestHeaders,
+        },
+    })
+
+    res.headers.set('Content-Security-Policy', contentSecurityPolicyHeaderValue)
+    res.headers.set('X-Content-Type-Options', 'nosniff')
+    res.headers.set('X-Frame-Options', 'DENY')
 
     // Bypassing middleware if Supabase env vars are missing (prevents 500 error on public pages)
     if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
