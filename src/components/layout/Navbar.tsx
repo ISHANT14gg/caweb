@@ -13,6 +13,7 @@ const Navbar = () => {
         href: string;
         hasDropdown?: boolean;
         subItems?: { name: string; href: string }[];
+        megaMenu?: { category: string; items: { name: string; href: string }[] }[];
     };
 
     const navigation: NavigationItem[] = [
@@ -22,14 +23,40 @@ const Navbar = () => {
             name: 'SERVICES',
             href: '/services',
             hasDropdown: true,
-            subItems: [
-                { name: 'Business Setup', href: '/services/setup' },
-                { name: 'Foreign Direct Investment', href: '/services/fdi' },
-                { name: 'Audit & Assurance', href: '/services/audit' },
-                { name: 'Taxation Services', href: '/services/tax' },
-                { name: 'Outsourcing Services', href: '/services/outsourcing' },
-                { name: 'Corporate Compliance', href: '/services/compliance' },
-            ],
+            megaMenu: [
+                {
+                    category: 'Indirect & Direct Tax Compliance',
+                    items: [
+                        { name: 'GST Compliance & Advisory', href: '/services/gst-compliance' },
+                        { name: 'Income Tax Compliance & Representation', href: '/services/income-tax' },
+                        { name: 'Statutory & Regulatory Registrations', href: '/services/statutory-registrations' },
+                    ]
+                },
+                {
+                    category: 'Business Incorporation & Structuring Advisory',
+                    items: [
+                        { name: 'Entity Incorporation & ROC Compliance', href: '/services/entity-incorporation' },
+                        { name: 'Capital & Shareholding Structuring', href: '/services/capital-structuring' },
+                        { name: 'Startup Regulatory Framework', href: '/services/startup-regulatory' },
+                    ]
+                },
+                {
+                    category: 'Virtual CFO & Financial Strategy',
+                    items: [
+                        { name: 'Financial Modelling & Forecasting', href: '/services/financial-modelling' },
+                        { name: 'MIS & Performance Reporting', href: '/services/mis-reporting' },
+                        { name: 'Cash Flow & Working Capital', href: '/services/cash-flow' },
+                        { name: 'Fundraising & Strategic Advisory', href: '/services/fundraising' },
+                    ]
+                },
+                {
+                    category: 'Financial Literacy & Applied Finance Education',
+                    items: [
+                        { name: 'Entrepreneur Finance Programs', href: '/services/entrepreneur-finance' },
+                        { name: 'Tax Awareness Workshops', href: '/services/tax-workshops' },
+                    ]
+                }
+            ]
         },
         { name: 'KNOWLEDGE BANK', href: '#' },
         { name: 'CONTACT-US', href: '/contact' },
@@ -70,17 +97,27 @@ const Navbar = () => {
                                 </Link>
 
                                 {/* Dropdown Menu (Desktop) */}
-                                {item.hasDropdown && item.subItems && (
-                                    <div className="absolute top-full left-0 w-64 bg-white border border-gray-100 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-2 group-hover:translate-y-0 z-50 rounded-b-lg overflow-hidden">
-                                        <div className="py-2">
-                                            {item.subItems.map((subItem) => (
-                                                <Link
-                                                    key={subItem.name}
-                                                    href={subItem.href}
-                                                    className="block px-6 py-3 text-sm font-medium text-gray-700 hover:text-secondary hover:bg-soft-grey transition-colors"
-                                                >
-                                                    {subItem.name}
-                                                </Link>
+                                {item.hasDropdown && item.megaMenu && (
+                                    <div className="absolute top-full left-1/2 -translate-x-1/2 w-[750px] bg-white border border-gray-100 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-2 group-hover:translate-y-0 z-50 rounded-b-xl overflow-hidden p-6 cursor-default">
+                                        <div className="grid grid-cols-2 gap-8">
+                                            {item.megaMenu.map((group) => (
+                                                <div key={group.category} className="space-y-3">
+                                                    <h4 className="text-[11px] font-bold uppercase tracking-widest text-[#0B1F3A] border-b border-gray-100 pb-2 mb-3 mt-1 leading-relaxed">
+                                                        {group.category}
+                                                    </h4>
+                                                    <ul className="flex flex-col space-y-2">
+                                                        {group.items.map((subItem) => (
+                                                            <li key={subItem.name}>
+                                                                <Link
+                                                                    href={subItem.href}
+                                                                    className="text-[13px] font-medium text-gray-600 hover:text-[#C9A227] transition-colors py-1 inline-block"
+                                                                >
+                                                                    {subItem.name}
+                                                                </Link>
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </div>
                                             ))}
                                         </div>
                                     </div>
@@ -146,17 +183,26 @@ const Navbar = () => {
                                 </Link>
 
                                 {/* Mobile Submenu */}
-                                {item.hasDropdown && item.subItems && (
-                                    <div className="pl-6 bg-gray-50/50 py-2 border-l-2 border-secondary/20 ml-3 my-1 space-y-1 rounded-r border-b border-gray-50">
-                                        {item.subItems.map((subItem) => (
-                                            <Link
-                                                key={subItem.name}
-                                                href={subItem.href}
-                                                className="block px-3 py-2 text-sm text-gray-600 hover:text-secondary font-medium"
-                                                onClick={() => setIsOpen(false)}
-                                            >
-                                                {subItem.name}
-                                            </Link>
+                                {item.hasDropdown && item.megaMenu && (
+                                    <div className="pl-4 bg-gray-50/50 py-3 border-l-2 border-[#C9A227]/30 ml-2 my-1 space-y-5 rounded-r border-b border-gray-50">
+                                        {item.megaMenu.map((group) => (
+                                            <div key={group.category} className="space-y-2">
+                                                <h4 className="text-[10px] uppercase font-bold text-gray-400 tracking-wider mb-2 px-3 leading-relaxed">
+                                                    {group.category}
+                                                </h4>
+                                                <div className="flex flex-col space-y-1">
+                                                    {group.items.map((subItem) => (
+                                                        <Link
+                                                            key={subItem.name}
+                                                            href={subItem.href}
+                                                            className="block px-3 py-1.5 text-sm text-gray-700 hover:text-[#C9A227] font-medium"
+                                                            onClick={() => setIsOpen(false)}
+                                                        >
+                                                            {subItem.name}
+                                                        </Link>
+                                                    ))}
+                                                </div>
+                                            </div>
                                         ))}
                                     </div>
                                 )}

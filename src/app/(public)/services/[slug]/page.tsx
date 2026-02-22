@@ -6,82 +6,166 @@ import { Metadata } from "next";
 
 // Data
 const services = {
-    "setup": {
-        title: "Business Setup in India",
-        subtitle: "Incorporation & Structuring",
-        description: "Complete support for company incorporation, LLP registration, and startup structuring.",
-        longDescription: "We provide end-to-end support for setting up your business in India. Structure precedes scale. From choosing the correct entity classification to handling regulatory registration formalities, we ensure your venture begins on defensible, compliant foundations.",
+    // PILLAR 1: Indirect & Direct Tax Compliance
+    "gst-compliance": {
+        title: "GST Compliance & Advisory",
+        subtitle: "Indirect Tax Management",
+        description: "Comprehensive GST registration, filing, reconciliation, and audit support.",
+        longDescription: "Indirect taxation requires structural discipline. We manage the entire GST compliance lifecycle—from registration and monthly filings to Annual Returns. We ensure seamless Input Tax Credit (ITC) reconciliation and minimal risk of assessment notices.",
         features: [
-            "Company Incorporation (Pvt Ltd, PLC)",
-            "LLP Registration & Structuring",
-            "One Person Company (OPC) Registration",
-            "Partnership Firm Legalities",
-            "Startup India Recognition & Tax Benefits"
+            "GST Registration & Amendments",
+            "GSTR-1, GSTR-3B, GSTR-9, GSTR-9C Filing",
+            "Input Tax Credit (ITC) Reconciliation",
+            "GST Audit Support & E-Way Bill Advisory",
+            "Notice Reply Drafting & Litigation Support"
         ]
     },
-    "fdi": {
-        title: "Foreign Direct Investment",
-        subtitle: "Cross-Border Structuring",
-        description: "Expert guidance on FDI regulations, RBI compliance, and setting up Indian subsidiaries.",
-        longDescription: "Navigating India's FDI regulations requires extreme precision. We offer expert strategic advisory to international businesses seeking to invest in India, ensuring airtight compliance with all RBI, FEMA, and cross-border taxation frameworks.",
+    "income-tax": {
+        title: "Income Tax Compliance & Representation",
+        subtitle: "Direct Tax Planning",
+        description: "Strategic income tax filing, advance tax planning, and assessment handling.",
+        longDescription: "We engineer comprehensive taxation strategies designed to optimise operational liquidity while maintaining uncompromising regulatory alignment. Our teams manage Direct Assessment with precision, ensuring timely ITR filings, tax audits, and representation.",
         features: [
-            "FDI Inbound Structuring",
-            "RBI & FEMA Regulatory Compliance",
-            "Liaison & Branch Office Setup",
-            "Foreign Subsidiary Incorporation",
-            "Fund Repatriation Strategy"
+            "ITR Filing (Individuals / Firms / Companies / Trusts)",
+            "Tax Audit u/s 44AB",
+            "TDS / TCS Returns",
+            "Advance Tax Planning",
+            "Scrutiny, Rectification & Appeals"
         ]
     },
-    "audit": {
-        title: "Audit & Assurance",
-        subtitle: "Verification & Transparency",
-        description: "Statutory audit, internal audit, and risk advisory services for corporate excellence.",
-        longDescription: "Our assurance methodology looks beyond standard verification. We perform independent, rigorous evaluation of your financial architecture—identifying exposure points, strengthening internal controls, and ensuring absolute statutory compliance.",
+    "statutory-registrations": {
+        title: "Statutory & Regulatory Registrations",
+        subtitle: "Foundational Compliance",
+        description: "PAN, MSME, Professional Tax, and basic labour compliance processing.",
+        longDescription: "Corporate liability often hides in administrative oversight. We handle all initial and recurring statutory business registrations required by local and central authorities, ensuring your business begins and operates on a legally solid foundation.",
         features: [
-            "Statutory Corporate Audit",
-            "Internal Process & Risk Audit",
-            "Tax Audit Compliance",
-            "Forensic & Investigative Audit",
-            "Inventory & Systems Audit"
+            "PAN / TAN Processing",
+            "MSME (Udyam) Registration & Professional Tax",
+            "Shops & Establishment Act",
+            "Basic Labour Compliance",
+            "Periodic Statutory Filings"
         ]
     },
-    "tax": {
-        title: "Taxation Services",
-        subtitle: "Direct & Indirect Liability Strategy",
-        description: "Comprehensive direct (Income Tax) and indirect (GST) tax planning and compliance.",
-        longDescription: "We engineer comprehensive taxation strategies designed to optimise operational liquidity while maintaining uncompromising regulatory alignment. Our teams manage both Direct Assessment (Income Tax) and Indirect Exposure (GST) with precision.",
+
+    // PILLAR 2: Business Incorporation & Structuring Advisory
+    "entity-incorporation": {
+        title: "Entity Incorporation & ROC",
+        subtitle: "Business Setup in India",
+        description: "Private Limited, LLP formation, and ongoing MCA/ROC compliance.",
+        longDescription: "Structure precedes scale. From choosing the correct entity classification to handling regulatory registration formalities, we ensure your venture begins on defensible, compliant foundations. We manage SPICe+ filings, MOA drafting, and annual ROC compliance.",
         features: [
-            "Corporate & Individual Tax Filing",
-            "GST Implementation & Reconciliations",
-            "Advance Tax Positioning",
-            "TDS / TCS Withholding Compliance",
-            "Assessment & Litigation Representation"
+            "Private Limited / LLP / OPC Formation",
+            "DIN & DSC Processing",
+            "MOA & AOA Drafting",
+            "AOC-4 & MGT-7 Annual Filings",
+            "Director & Share Capital Changes"
         ]
     },
-    "outsourcing": {
-        title: "Outsourcing Services",
-        subtitle: "Virtual CFO & Operations",
-        description: "Virtual CFO, payroll processing, and accounting outsourcing services.",
-        longDescription: "Delegate operational friction. We assume control of your internal financial mechanics—delivering Fortune-500 level accounting, rigorous payroll discipline, and Virtual CFO advisory without the overhead of an internal department.",
+    "capital-structuring": {
+        title: "Capital & Shareholding Structuring",
+        subtitle: "Equity Structuring",
+        description: "Founders equity planning, valuation, and convertible instruments advisory.",
+        longDescription: "Your capitalization table dictates future control and growth capability. We provide strategic consulting on founders' equity distribution, ESOP formation, and structuring of convertible notes to ensure alignment with long-term growth objectives.",
         features: [
-            "End-to-end Bookkeeping",
-            "Payroll & Labour Compliance",
-            "Virtual CFO Strategic Advisory",
-            "Receivables & Payables Automation",
-            "Board-level Financial Reporting"
+            "Founders Equity Planning",
+            "Share Subscription Compliance",
+            "ESOP Advisory",
+            "Convertible Instruments Structuring",
+            "Valuation Coordination"
         ]
     },
-    "compliance": {
-        title: "Corporate Compliance",
-        subtitle: "Secretarial & Regulatory",
-        description: "Secretarial services, ROC filings, and regulatory compliance management.",
-        longDescription: "Corporate liability often hides in administrative oversight. We manage the entirety of your secretarial and regulatory calendar, ensuring flawless MCA submissions, documented board governance, and zero default penalties.",
+    "startup-regulatory": {
+        title: "Startup Regulatory Framework",
+        subtitle: "DPIIT & Recognition Compliance",
+        description: "Startup India recognition, compliance roadmaps, and financial architecture.",
+        longDescription: "Scaling requires preparation beyond pitch decks. We guide early-stage ventures through the DPIIT registration process, secure Startup India benefits, and lay down the initial financial architecture required for sustainable venture scale.",
         features: [
-            "Annual ROC Filings & xBRL",
-            "Director & Shareholder Structuring",
-            "Board Meeting & Minutes Governance",
-            "Capital Alteration & Share Transfers",
-            "Due Diligence Preparation"
+            "DPIIT Registration",
+            "Startup India Recognition",
+            "Compliance Roadmap Implementation",
+            "Initial Financial Architecture",
+            "Regulatory Advisory for Founders"
+        ]
+    },
+
+    // PILLAR 3: Virtual CFO & Financial Strategy
+    "financial-modelling": {
+        title: "Financial Modelling & Forecasting",
+        subtitle: "Strategic Projection",
+        description: "Cost modelling, revenue projections, and sensitivity testing.",
+        longDescription: "Numbers without interpretation limit decision-making. We construct robust 3-to-5 year financial models that simulate revenue growth, operational costs, and capital requirements, equipping management with a predictable framework for expansion.",
+        features: [
+            "3–5 Year Financial Projections",
+            "Revenue & Cost Modelling",
+            "Break-even Analysis",
+            "Scenario & Sensitivity Testing",
+            "Budget Structuring"
+        ]
+    },
+    "mis-reporting": {
+        title: "MIS & Performance Reporting",
+        subtitle: "Data-Driven Financial Review",
+        description: "Monthly MIS, KPI tracking, and departmental profitability monitoring.",
+        longDescription: "Delegate operational friction. We establish systematic Management Information System (MIS) reporting that translates raw accounting data into actionable executive insights, monitoring KPI ratios, departmental costs, and gross profitability.",
+        features: [
+            "Monthly MIS Framework",
+            "KPI & Ratio Analysis",
+            "Departmental Cost Monitoring",
+            "Profitability Tracking",
+            "Financial Dashboard Setup"
+        ]
+    },
+    "cash-flow": {
+        title: "Cash Flow & Working Capital",
+        subtitle: "Liquidity Discipline",
+        description: "Working capital optimization and cash flow statement analysis.",
+        longDescription: "Revenue is vanity; cash flow is sanity. Our advisory focuses heavily on working capital discipline, helping businesses forecast liquidity requirements, optimize receivables, and construct resilient funding documentation for banking facilities.",
+        features: [
+            "Cash & Fund Flow Statements",
+            "Working Capital Assessment",
+            "Banking Documentation Support",
+            "Financial Discipline Systems",
+            "Liquidity Forecasting"
+        ]
+    },
+    "fundraising": {
+        title: "Fundraising & Strategic Advisory",
+        subtitle: "Investor Readiness",
+        description: "Data room preparation, pitch deck financial inputs, and valuation support.",
+        longDescription: "Preparation dictates valuation. We act as your financial co-pilot during funding rounds, organizing pristine due diligence data rooms, validating pitch deck financials, and providing structured advisory during investor negotiations.",
+        features: [
+            "Investor Readiness Preparation",
+            "Data Room Structuring",
+            "Pitch Deck Financial Inputs",
+            "Valuation Discussion Support",
+            "Expansion Strategy Planning"
+        ]
+    },
+
+    // PILLAR 4: Financial Literacy & Education
+    "entrepreneur-finance": {
+        title: "Entrepreneur Finance Programs",
+        subtitle: "Financial Literacy & Education",
+        description: "Finance for non-finance founders, costing basics, and statements.",
+        longDescription: "Demystifying corporate finance for founders. Our structured programs are designed to equip non-finance business owners with the ability to read balance sheets, understand cost-drivers, and make data-backed pricing decisions.",
+        features: [
+            "Finance for Non-Finance Founders",
+            "Financial Statement Reading",
+            "Costing & Pricing Basics",
+            "GST Practical Implementation",
+            "Working Capital Cycles"
+        ]
+    },
+    "tax-workshops": {
+        title: "Tax Awareness Workshops",
+        subtitle: "Financial Literacy & Education",
+        description: "Income tax awareness, GST implementation, and record-keeping.",
+        longDescription: "A proactive approach to regulatory awareness. We conduct extensive workshops for corporate employees and business teams to cultivate discipline around tax filing, compliance calendars, and essential documentation standards.",
+        features: [
+            "Income Tax Awareness Sessions",
+            "GST Implementation & Compliance Training",
+            "Record-Keeping Discipline",
+            "Tax Saving Strategies for Salaried Professionals"
         ]
     }
 };
