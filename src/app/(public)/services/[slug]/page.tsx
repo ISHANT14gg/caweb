@@ -182,8 +182,8 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                                         <a href="mailto:info@jyotithakurassociates.com" className="block text-gray-900 font-medium hover:text-blue-600 transition-colors mb-1">
                                             info@jyotithakurassociates.com
                                         </a>
-                                        <a href="tel:+919805931332" className="block text-gray-600 hover:text-gray-900 transition-colors">
-                                            +91 98059 31332
+                                        <a href="tel:+917018773240" className="block text-gray-600 hover:text-gray-900 transition-colors">
+                                            +91 70187 73240
                                         </a>
                                     </div>
                                 </div>

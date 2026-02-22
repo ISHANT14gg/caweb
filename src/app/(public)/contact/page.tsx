@@ -92,7 +92,7 @@ export default function Contact() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-14">
                         {[
                             { icon: MapPin, label: 'Location', value: 'Mehre, Barsar, Himachal Pradesh 174305' },
-                            { icon: Phone, label: 'Phone', value: '+91 98059 31332', href: 'tel:+919805931332' },
+                            { icon: Phone, label: 'Phone', value: '+91 70187 73240', href: 'tel:+917018773240' },
                             { icon: Mail, label: 'Email', value: 'info@jyotithakurassociates.com', href: 'mailto:info@jyotithakurassociates.com' },
                             { icon: Clock, label: 'Working Hours', value: 'Mon–Sat: 10 AM – 7 PM' },
                         ].map((card, idx) => (
