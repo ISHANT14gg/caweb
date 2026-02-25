@@ -23,7 +23,7 @@ const blocks = [
         ],
         closing: 'Designed for individuals and business owners seeking confidence in financial decisions.',
         cta: 'Explore Articles',
-        ctaHref: '/insights',
+        ctaHref: '/knowledge-bank',
     },
     {
         title: 'Startup & Growth Advisory Insights',
@@ -36,7 +36,7 @@ const blocks = [
         ],
         closing: 'Built for founders and growing businesses.',
         cta: 'Read Strategic Notes',
-        ctaHref: '/insights',
+        ctaHref: '/knowledge-bank',
     },
     {
         title: 'Skill Academia & Professional Development',
@@ -49,7 +49,7 @@ const blocks = [
         ],
         closing: 'Structured knowledge to bridge theory and execution.',
         cta: 'View Learning Modules',
-        ctaHref: '/insights',
+        ctaHref: '/knowledge-bank',
     },
 ];
 
@@ -173,7 +173,7 @@ export default function InsightsSection() {
                             If you are looking for clarity — start with a structured conversation.
                         </p>
                         <Link
-                            href="/contact"
+                            href="/consultation"
                             className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 bg-navy text-white font-semibold rounded-lg hover:border-gold hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 text-sm tracking-wide border-2 border-transparent group"
                         >
                             Schedule a Consultation

@@ -58,7 +58,8 @@ const Navbar = () => {
                 }
             ]
         },
-        { name: 'KNOWLEDGE BANK', href: '#' },
+        { name: 'KNOWLEDGE BANK', href: '/knowledge-bank' },
+        { name: 'CONSULTATION', href: '/consultation' },
         { name: 'CONTACT-US', href: '/contact' },
     ];
 

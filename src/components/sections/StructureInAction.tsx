@@ -276,7 +276,7 @@ export default function StructureInAction() {
                             Structured systems create stability — whether you are filing your first return or preparing for expansion.
                         </p>
                         <Link
-                            href="/contact"
+                            href="/consultation"
                             className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 bg-navy text-white font-semibold rounded-lg hover:border-gold hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 text-sm tracking-wide border-2 border-transparent group"
                         >
                             Start With a Structured Consultation

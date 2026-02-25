@@ -77,7 +77,7 @@ export default function Home() {
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
-                  href="/contact"
+                  href="/consultation"
                   className="inline-flex items-center justify-center px-8 py-4 bg-gold text-navy font-semibold rounded-lg hover:brightness-110 transition-all duration-200 shadow-lg hover:shadow-gold/20 hover:-translate-y-0.5 text-sm tracking-wide"
                 >
                   Schedule a Consultation
