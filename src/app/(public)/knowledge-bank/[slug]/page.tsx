@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { ArrowLeft, ArrowRight, Share2, BookmarkPlus } from 'lucide-react';
 import ScrollAnimation from '@/components/ui/ScrollAnimation';
+import { guidesData } from './guideContent';
 
 export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
     // Await the params to resolve Next.js 15+ promise-based params warning
@@ -13,6 +14,10 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         .split('-')
         .map(word => word.charAt(0).toUpperCase() + word.slice(1))
         .join(' ');
+
+    const article = guidesData[slug];
+    const displayTitle = article?.title || formattedTitle;
+    const readTime = article?.readTime || "15 min read";
 
     return (
         <main className="min-h-screen bg-white text-gray-900 pt-32 pb-24 font-sans selection:bg-[#C9A227]/20 flex flex-col items-center">
@@ -34,12 +39,12 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                         </span>
                         <span className="text-gray-300">•</span>
                         <span className="text-xs font-medium text-gray-500">
-                            15 min read
+                            {readTime}
                         </span>
                     </div>
 
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-[#0B1F3A] font-light leading-tight mb-8">
-                        {formattedTitle}
+                        {displayTitle}
                     </h1>
 
                     <div className="flex items-center justify-center gap-6 pt-6 border-t border-gray-100">
@@ -63,33 +68,61 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                     <div className="bg-gray-50 border-l-4 border-[#0B1F3A] p-6 md:p-8 rounded-r-xl mb-12">
                         <h3 className="text-sm font-bold text-gray-900 uppercase tracking-wide mb-3">Executive Summary</h3>
                         <p className="text-gray-700 leading-relaxed font-medium">
-                            This is a placeholder for the "{formattedTitle}" article. In a production environment, this space would contain the high-level takeaway of the financial concept to provide immediate clarity before diving into the details.
+                            {article?.executiveSummary || `This is a placeholder for the "${formattedTitle}" article. In a production environment, this space would contain the high-level takeaway of the financial concept to provide immediate clarity before diving into the details.`}
                         </p>
                     </div>
                 </ScrollAnimation>
 
-                {/* Article Body Placeholder */}
+                {/* Article Body Content */}
                 <ScrollAnimation direction="up" delay={0.2} className="prose prose-lg prose-gray max-w-none mb-16">
-                    <h2 className="text-2xl font-bold text-[#0B1F3A] mb-4">Understanding the Core Concept</h2>
-                    <p className="text-gray-600 mb-6 leading-relaxed">
-                        Financial clarity requires a structured approach. The concept of {formattedTitle.toLowerCase()} is often misunderstood due to fragmented information online. By understanding the core mechanics rather than just the surface-level rules, you can make more predictable, risk-adjusted decisions.
-                    </p>
+                    {article ? (
+                        <div className="space-y-12">
+                            {article.sections.map((section, index) => (
+                                <div key={index} className="space-y-6">
+                                    <h2 className="text-2xl font-bold text-[#0B1F3A] mb-4 flex items-center gap-3">
+                                        <span className="bg-[#C9A227] text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold shrink-0 shadow-sm border border-[#0B1F3A]/5">{index + 1}</span>
+                                        {section.title}
+                                    </h2>
+                                    <div className="space-y-6 pl-11">
+                                        {section.points.map((point, pIndex) => (
+                                            <div key={pIndex} className="bg-gray-50 rounded-xl p-6 border border-gray-100">
+                                                <h4 className="text-base font-bold text-[#0B1F3A] mb-2 flex items-start gap-2">
+                                                    <span className="text-[#C9A227] shrink-0 mt-1">•</span>
+                                                    {point.subtitle}
+                                                </h4>
+                                                <p className="text-gray-600 text-sm md:text-base leading-relaxed pl-4">
+                                                    {point.content}
+                                                </p>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    ) : (
+                        <>
+                            <h2 className="text-2xl font-bold text-[#0B1F3A] mb-4">Understanding the Core Concept</h2>
+                            <p className="text-gray-600 mb-6 leading-relaxed">
+                                Financial clarity requires a structured approach. The concept of {formattedTitle.toLowerCase()} is often misunderstood due to fragmented information online. By understanding the core mechanics rather than just the surface-level rules, you can make more predictable, risk-adjusted decisions.
+                            </p>
 
-                    <h2 className="text-2xl font-bold text-[#0B1F3A] mb-4 mt-10">Structural Impact on Operations</h2>
-                    <p className="text-gray-600 mb-6 leading-relaxed">
-                        Whether you are an individual evaluating personal tax liabilities or a business owner looking at structuring, {formattedTitle.toLowerCase()} dictates certain compliance requirements that cannot be ignored. Setting up an internal calendar and diagnostic review process is essential to maintain baseline stability.
-                    </p>
+                            <h2 className="text-2xl font-bold text-[#0B1F3A] mb-4 mt-10">Structural Impact on Operations</h2>
+                            <p className="text-gray-600 mb-6 leading-relaxed">
+                                Whether you are an individual evaluating personal tax liabilities or a business owner looking at structuring, {formattedTitle.toLowerCase()} dictates certain compliance requirements that cannot be ignored. Setting up an internal calendar and diagnostic review process is essential to maintain baseline stability.
+                            </p>
 
-                    <div className="my-10 p-6 bg-[#0B1F3A]/5 rounded-xl border border-[#0B1F3A]/10">
-                        <h4 className="text-base font-bold text-[#0B1F3A] mb-2">Key Takeaway</h4>
-                        <p className="text-gray-700 text-sm">
-                            Always ensure structural alignment precedes tactical execution. Reactive compliance results in penalties, while structured compliance creates visibility.
-                        </p>
-                    </div>
+                            <div className="my-10 p-6 bg-[#0B1F3A]/5 rounded-xl border border-[#0B1F3A]/10">
+                                <h4 className="text-base font-bold text-[#0B1F3A] mb-2">Key Takeaway</h4>
+                                <p className="text-gray-700 text-sm">
+                                    Always ensure structural alignment precedes tactical execution. Reactive compliance results in penalties, while structured compliance creates visibility.
+                                </p>
+                            </div>
 
-                    <p className="text-gray-600 mb-6 leading-relaxed">
-                        If you represent a growing venture, establishing these protocols early will heavily reduce diligence friction during funding rounds or structural audits.
-                    </p>
+                            <p className="text-gray-600 mb-6 leading-relaxed">
+                                If you represent a growing venture, establishing these protocols early will heavily reduce diligence friction during funding rounds or structural audits.
+                            </p>
+                        </>
+                    )}
                 </ScrollAnimation>
 
                 {/* Bottom CTA Block */}

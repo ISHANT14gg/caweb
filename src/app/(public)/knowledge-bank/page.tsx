@@ -88,118 +88,193 @@ export default function KnowledgeBankPage() {
                         </p>
                     </ScrollAnimation>
 
-                    <div className="space-y-12 w-full max-w-5xl mx-auto">
+                    {/* Unified 2x2 Premium Grid for Featured Guides */}
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full max-w-6xl mx-auto">
 
-                        {/* Guide 1 */}
-                        <ScrollAnimation type="fade" direction="left" delay={0.1}>
-                            <div className="bg-[#F8F9FA] rounded-2xl p-0 shadow-sm border border-gray-100 flex flex-col lg:flex-row hover:shadow-xl transition-all duration-300 group overflow-hidden hover:-translate-y-1">
-                                <div className="lg:w-2/5 bg-[#0B1F3A] p-10 flex flex-col relative text-white">
-                                    <div className="absolute inset-0 bg-[url('/noise.png')] opacity-10 mix-blend-overlay pointer-events-none" />
-                                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#C9A227] mb-6 block relative z-10">TAX FUNDAMENTALS</span>
-                                    <h4 className="text-3xl font-serif text-white mb-6 relative z-10">Complete Beginner’s Guide to Income Tax Filing</h4>
-                                    <div className="mt-auto relative z-10">
-                                        <div className="inline-flex items-center gap-2 bg-white/10 px-3 py-1.5 rounded-full text-xs font-semibold text-white/90">
-                                            <BookText size={14} className="text-[#C9A227]" /> 18–20 Min Read
-                                        </div>
+                        {/* Guide 1: Tax Fundamentals */}
+                        <ScrollAnimation type="fade" direction="up" delay={0.1} className="h-full">
+                            <div className="bg-white rounded-3xl p-8 md:p-10 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)] border border-gray-100 flex flex-col h-full hover:shadow-[0_20px_40px_-15px_rgba(11,31,58,0.1)] transition-all duration-500 group relative overflow-hidden hover:-translate-y-2">
+                                {/* Decorative top gradient line */}
+                                <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#0B1F3A] via-[#C9A227] to-[#0B1F3A] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                {/* Background subtle accent */}
+                                <div className="absolute top-0 right-0 w-64 h-64 bg-[#F8F9FA] rounded-bl-full -z-10 group-hover:bg-[#C9A227]/5 transition-colors duration-500"></div>
+
+                                <div className="flex items-center justify-between mb-8">
+                                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#C9A227] bg-[#C9A227]/10 px-3 py-1.5 rounded-full">
+                                        Tax Fundamentals
+                                    </span>
+                                    <div className="flex items-center text-xs text-gray-400 font-semibold bg-gray-50 px-3 py-1.5 rounded-full">
+                                        <BookText size={14} className="mr-1.5 text-gray-400" /> 18–20 Min Read
                                     </div>
-                                    <BookOpen className="absolute -bottom-10 -right-10 text-white/5 rotate-[-15deg] transition-transform duration-500 group-hover:rotate-0" size={200} />
                                 </div>
-                                <div className="lg:w-3/5 p-8 md:p-12 flex flex-col bg-white">
-                                    <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                                        A step-by-step explanation of how income tax works — ideal for first-time filers and individuals seeking clarity beyond basic form submission.
-                                    </p>
-                                    <div className="bg-gray-50 rounded-xl p-6 border-l-4 border-[#C9A227] mb-10">
-                                        <h5 className="text-sm font-bold text-[#0B1F3A] uppercase tracking-wide mb-4">Inside This Guide:</h5>
-                                        <ul className="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-6 text-sm text-gray-700 font-medium">
-                                            <li className="flex gap-2 items-start"><span className="text-[#C9A227]">•</span> How income tax slabs apply</li>
-                                            <li className="flex gap-2 items-start"><span className="text-[#C9A227]">•</span> Old vs New regime</li>
-                                            <li className="flex gap-2 items-start"><span className="text-[#C9A227]">•</span> Basic deductions overview</li>
-                                            <li className="flex gap-2 items-start"><span className="text-[#C9A227]">•</span> Common filing mistakes</li>
-                                        </ul>
-                                    </div>
-                                    <Link href="/knowledge-bank/income-tax-filing" className="mt-auto text-[#0B1F3A] font-bold uppercase tracking-wider text-sm flex items-center gap-2 w-fit group/btn hover:text-[#C9A227] transition-colors">
+
+                                <h4 className="text-3xl font-serif text-[#0B1F3A] mb-5 leading-snug group-hover:text-[#C9A227] transition-colors">
+                                    Complete Beginner’s Guide to Income Tax Filing
+                                </h4>
+
+                                <p className="text-gray-600 text-[15px] leading-relaxed mb-8">
+                                    A step-by-step explanation of how income tax works — ideal for first-time filers and individuals seeking clarity beyond basic form submission.
+                                </p>
+
+                                <div className="bg-[#F8F9FA] rounded-2xl p-6 border border-gray-100 mb-8 flex-grow">
+                                    <h5 className="text-[11px] font-extrabold text-[#0B1F3A] uppercase tracking-widest mb-4 flex items-center gap-2">
+                                        Inside This Guide
+                                    </h5>
+                                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-4 text-[13px] text-gray-600 font-medium">
+                                        <li className="flex gap-2 items-start"><span className="text-[#C9A227] mt-0.5">•</span> How income tax slabs apply</li>
+                                        <li className="flex gap-2 items-start"><span className="text-[#C9A227] mt-0.5">•</span> Old vs New regime</li>
+                                        <li className="flex gap-2 items-start"><span className="text-[#C9A227] mt-0.5">•</span> Basic deductions</li>
+                                        <li className="flex gap-2 items-start"><span className="text-[#C9A227] mt-0.5">•</span> Common filing mistakes</li>
+                                    </ul>
+                                </div>
+
+                                <div className="border-t border-gray-100 pt-6 mt-auto">
+                                    <Link href="/knowledge-bank/income-tax-filing" className="inline-flex items-center justify-center w-full px-6 py-4 bg-[#0B1F3A] text-white rounded-xl font-bold uppercase tracking-wider text-[11px] hover:bg-[#C9A227] transition-colors duration-300 group/btn shadow-md hover:shadow-lg">
                                         Read Complete Guide
-                                        <ArrowRight size={16} className="transform group-hover/btn:translate-x-1 transition-transform" />
+                                        <ArrowRight size={16} className="ml-2 transform group-hover/btn:translate-x-1 transition-transform" />
                                     </Link>
                                 </div>
                             </div>
                         </ScrollAnimation>
 
-                        {/* Guide 2 */}
-                        <ScrollAnimation type="fade" direction="right" delay={0.2}>
-                            <div className="bg-[#F8F9FA] rounded-2xl p-0 shadow-sm border border-gray-100 flex flex-col lg:flex-row hover:shadow-xl transition-all duration-300 group overflow-hidden hover:-translate-y-1">
-                                <div className="lg:w-2/5 bg-[#0B1F3A] p-10 flex flex-col relative text-white lg:order-2">
-                                    <div className="absolute inset-0 bg-[url('/noise.png')] opacity-10 mix-blend-overlay pointer-events-none" />
-                                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#C9A227] mb-6 block relative z-10">BUSINESS STRUCTURING</span>
-                                    <h4 className="text-3xl font-serif text-white mb-6 relative z-10">Startup Structuring Blueprint</h4>
-                                    <div className="mt-auto relative z-10">
-                                        <div className="inline-flex items-center gap-2 bg-white/10 px-3 py-1.5 rounded-full text-xs font-semibold text-white/90">
-                                            <BookText size={14} className="text-[#C9A227]" /> 22–25 Min Read
-                                        </div>
+                        {/* Guide 2: Business Structuring */}
+                        <ScrollAnimation type="fade" direction="up" delay={0.2} className="h-full">
+                            <div className="bg-white rounded-3xl p-8 md:p-10 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)] border border-gray-100 flex flex-col h-full hover:shadow-[0_20px_40px_-15px_rgba(11,31,58,0.1)] transition-all duration-500 group relative overflow-hidden hover:-translate-y-2">
+                                {/* Decorative top gradient line */}
+                                <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#0B1F3A] via-[#C9A227] to-[#0B1F3A] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                {/* Background subtle accent */}
+                                <div className="absolute top-0 right-0 w-64 h-64 bg-[#F8F9FA] rounded-bl-full -z-10 group-hover:bg-[#C9A227]/5 transition-colors duration-500"></div>
+
+                                <div className="flex items-center justify-between mb-8">
+                                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#C9A227] bg-[#C9A227]/10 px-3 py-1.5 rounded-full">
+                                        Business Structuring
+                                    </span>
+                                    <div className="flex items-center text-xs text-gray-400 font-semibold bg-gray-50 px-3 py-1.5 rounded-full">
+                                        <BookText size={14} className="mr-1.5 text-gray-400" /> 22–25 Min Read
                                     </div>
-                                    <Compass className="absolute -bottom-10 -left-10 text-white/5 rotate-[15deg] transition-transform duration-500 group-hover:-rotate-[5deg]" size={200} />
                                 </div>
-                                <div className="lg:w-3/5 p-8 md:p-12 flex flex-col bg-white lg:order-1 border-r border-gray-100">
-                                    <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                                        Before scaling or raising capital, structural clarity is essential. This blueprint outlines how entity choice, tax positioning, and compliance discipline influence long-term growth.
-                                    </p>
-                                    <div className="bg-gray-50 rounded-xl p-6 border-l-4 border-[#0B1F3A] mb-10">
-                                        <h5 className="text-sm font-bold text-[#0B1F3A] uppercase tracking-wide mb-4">Inside This Guide:</h5>
-                                        <ul className="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-6 text-sm text-gray-700 font-medium">
-                                            <li className="flex gap-2 items-start"><span className="text-[#0B1F3A]">•</span> Entity comparison</li>
-                                            <li className="flex gap-2 items-start"><span className="text-[#0B1F3A]">•</span> Compliance cost implications</li>
-                                            <li className="flex gap-2 items-start"><span className="text-[#0B1F3A]">•</span> Structuring before fundraising</li>
-                                            <li className="flex gap-2 items-start"><span className="text-[#0B1F3A]">•</span> Governance readiness</li>
-                                        </ul>
-                                    </div>
-                                    <Link href="/knowledge-bank/startup-structuring" className="mt-auto text-[#0B1F3A] font-bold uppercase tracking-wider text-sm flex items-center gap-2 w-fit group/btn hover:text-[#C9A227] transition-colors">
+
+                                <h4 className="text-3xl font-serif text-[#0B1F3A] mb-5 leading-snug group-hover:text-[#C9A227] transition-colors">
+                                    Startup Structuring Blueprint
+                                </h4>
+
+                                <p className="text-gray-600 text-[15px] leading-relaxed mb-8">
+                                    Before scaling or raising capital, structural clarity is essential. This blueprint outlines how entity choice and tax positioning influence long-term growth.
+                                </p>
+
+                                <div className="bg-[#F8F9FA] rounded-2xl p-6 border border-gray-100 mb-8 flex-grow">
+                                    <h5 className="text-[11px] font-extrabold text-[#0B1F3A] uppercase tracking-widest mb-4 flex items-center gap-2">
+                                        Inside This Guide
+                                    </h5>
+                                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-4 text-[13px] text-gray-600 font-medium">
+                                        <li className="flex gap-2 items-start"><span className="text-[#C9A227] mt-0.5">•</span> Entity comparison</li>
+                                        <li className="flex gap-2 items-start"><span className="text-[#C9A227] mt-0.5">•</span> Compliance cost</li>
+                                        <li className="flex gap-2 items-start"><span className="text-[#C9A227] mt-0.5">•</span> Structuring for funding</li>
+                                        <li className="flex gap-2 items-start"><span className="text-[#C9A227] mt-0.5">•</span> Governance readiness</li>
+                                    </ul>
+                                </div>
+
+                                <div className="border-t border-gray-100 pt-6 mt-auto">
+                                    <Link href="/knowledge-bank/startup-structuring" className="inline-flex items-center justify-center w-full px-6 py-4 bg-[#0B1F3A] text-white rounded-xl font-bold uppercase tracking-wider text-[11px] hover:bg-[#C9A227] transition-colors duration-300 group/btn shadow-md hover:shadow-lg">
                                         Explore Strategy Blueprint
-                                        <ArrowRight size={16} className="transform group-hover/btn:translate-x-1 transition-transform" />
+                                        <ArrowRight size={16} className="ml-2 transform group-hover/btn:translate-x-1 transition-transform" />
                                     </Link>
                                 </div>
                             </div>
                         </ScrollAnimation>
 
-                        {/* Guide 3 & 4 Mini Grid */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                            {/* Guide 3 */}
-                            <ScrollAnimation type="fade" direction="up" delay={0.3}>
-                                <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 flex flex-col hover:shadow-lg transition-all duration-300 group hover:-translate-y-1 h-full relative overflow-hidden">
-                                    <div className="absolute top-0 right-0 w-32 h-32 bg-[#F8F9FA] rounded-bl-full -z-10 group-hover:bg-[#C9A227]/5 transition-colors"></div>
-                                    <ShieldCheck className="text-[#C9A227] mb-6" size={36} />
-                                    <span className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2 block">GST & COMPLIANCE</span>
-                                    <h4 className="text-2xl font-serif text-[#0B1F3A] mb-4">GST Compliance Checklist</h4>
-                                    <p className="text-gray-600 text-sm leading-relaxed mb-8 flex-grow">
-                                        A structured checklist to reduce compliance stress and build systematic filing discipline. Designed for business owners who want clarity, not confusion.
-                                    </p>
-                                    <div className="border-t border-gray-100 pt-6 mt-auto">
-                                        <Link href="/knowledge-bank/gst-compliance-sme" className="text-[#0B1F3A] font-bold uppercase tracking-wider text-xs flex items-center gap-2 w-fit group/btn hover:text-[#C9A227] transition-colors">
-                                            View The Checklist
-                                            <ArrowRight size={14} className="transform group-hover/btn:translate-x-1 transition-transform" />
-                                        </Link>
-                                    </div>
-                                </div>
-                            </ScrollAnimation>
+                        {/* Guide 3: GST & Compliance */}
+                        <ScrollAnimation type="fade" direction="up" delay={0.3} className="h-full">
+                            <div className="bg-white rounded-3xl p-8 md:p-10 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)] border border-gray-100 flex flex-col h-full hover:shadow-[0_20px_40px_-15px_rgba(11,31,58,0.1)] transition-all duration-500 group relative overflow-hidden hover:-translate-y-2">
+                                {/* Decorative top gradient line */}
+                                <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#0B1F3A] via-[#C9A227] to-[#0B1F3A] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                {/* Background subtle accent */}
+                                <div className="absolute top-0 right-0 w-64 h-64 bg-[#F8F9FA] rounded-bl-full -z-10 group-hover:bg-[#C9A227]/5 transition-colors duration-500"></div>
 
-                            {/* Guide 4 */}
-                            <ScrollAnimation type="fade" direction="up" delay={0.4}>
-                                <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 flex flex-col hover:shadow-lg transition-all duration-300 group hover:-translate-y-1 h-full relative overflow-hidden">
-                                    <div className="absolute top-0 right-0 w-32 h-32 bg-[#0B1F3A]/5 rounded-bl-full -z-10 group-hover:bg-[#0B1F3A]/10 transition-colors"></div>
-                                    <TrendingUp className="text-[#0B1F3A] mb-6" size={36} />
-                                    <span className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2 block">FINANCIAL INTERPRETATION</span>
-                                    <h4 className="text-2xl font-serif text-[#0B1F3A] mb-4">Financial Health Review Framework</h4>
-                                    <p className="text-gray-600 text-sm leading-relaxed mb-8 flex-grow">
-                                        This guide explains how to interpret financial statements and assess operational stability through structured analysis beyond profit numbers.
-                                    </p>
-                                    <div className="border-t border-gray-100 pt-6 mt-auto">
-                                        <Link href="/knowledge-bank/financial-health-review" className="text-[#0B1F3A] font-bold uppercase tracking-wider text-xs flex items-center gap-2 w-fit group/btn hover:text-[#C9A227] transition-colors">
-                                            Review Framework
-                                            <ArrowRight size={14} className="transform group-hover/btn:translate-x-1 transition-transform" />
-                                        </Link>
+                                <div className="flex items-center justify-between mb-8">
+                                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#C9A227] bg-[#C9A227]/10 px-3 py-1.5 rounded-full">
+                                        GST & Compliance
+                                    </span>
+                                    <div className="flex items-center text-xs text-gray-400 font-semibold bg-gray-50 px-3 py-1.5 rounded-full">
+                                        <BookText size={14} className="mr-1.5 text-gray-400" /> 15 Min Read
                                     </div>
                                 </div>
-                            </ScrollAnimation>
-                        </div>
+
+                                <h4 className="text-3xl font-serif text-[#0B1F3A] mb-5 leading-snug group-hover:text-[#C9A227] transition-colors">
+                                    GST Compliance Checklist for SMEs
+                                </h4>
+
+                                <p className="text-gray-600 text-[15px] leading-relaxed mb-8">
+                                    A structured checklist to reduce compliance stress and build systematic filing discipline. Designed for business owners who want clarity, not confusion.
+                                </p>
+
+                                <div className="bg-[#F8F9FA] rounded-2xl p-6 border border-gray-100 mb-8 flex-grow">
+                                    <h5 className="text-[11px] font-extrabold text-[#0B1F3A] uppercase tracking-widest mb-4 flex items-center gap-2">
+                                        Inside This Guide
+                                    </h5>
+                                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-4 text-[13px] text-gray-600 font-medium">
+                                        <li className="flex gap-2 items-start"><span className="text-[#C9A227] mt-0.5">•</span> Registration triggers</li>
+                                        <li className="flex gap-2 items-start"><span className="text-[#C9A227] mt-0.5">•</span> ITC Frameworks</li>
+                                        <li className="flex gap-2 items-start"><span className="text-[#C9A227] mt-0.5">•</span> Filing structures</li>
+                                        <li className="flex gap-2 items-start"><span className="text-[#C9A227] mt-0.5">•</span> Monthly discipline</li>
+                                    </ul>
+                                </div>
+
+                                <div className="border-t border-gray-100 pt-6 mt-auto">
+                                    <Link href="/knowledge-bank/gst-compliance-sme" className="inline-flex items-center justify-center w-full px-6 py-4 bg-[#0B1F3A] text-white rounded-xl font-bold uppercase tracking-wider text-[11px] hover:bg-[#C9A227] transition-colors duration-300 group/btn shadow-md hover:shadow-lg">
+                                        View The Checklist
+                                        <ArrowRight size={16} className="ml-2 transform group-hover/btn:translate-x-1 transition-transform" />
+                                    </Link>
+                                </div>
+                            </div>
+                        </ScrollAnimation>
+
+                        {/* Guide 4: Financial Interpretation */}
+                        <ScrollAnimation type="fade" direction="up" delay={0.4} className="h-full">
+                            <div className="bg-white rounded-3xl p-8 md:p-10 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)] border border-gray-100 flex flex-col h-full hover:shadow-[0_20px_40px_-15px_rgba(11,31,58,0.1)] transition-all duration-500 group relative overflow-hidden hover:-translate-y-2">
+                                {/* Decorative top gradient line */}
+                                <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#0B1F3A] via-[#C9A227] to-[#0B1F3A] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                {/* Background subtle accent */}
+                                <div className="absolute top-0 right-0 w-64 h-64 bg-[#F8F9FA] rounded-bl-full -z-10 group-hover:bg-[#C9A227]/5 transition-colors duration-500"></div>
+
+                                <div className="flex items-center justify-between mb-8">
+                                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#C9A227] bg-[#C9A227]/10 px-3 py-1.5 rounded-full">
+                                        Financial Interpretation
+                                    </span>
+                                    <div className="flex items-center text-xs text-gray-400 font-semibold bg-gray-50 px-3 py-1.5 rounded-full">
+                                        <BookText size={14} className="mr-1.5 text-gray-400" /> 20 Min Read
+                                    </div>
+                                </div>
+
+                                <h4 className="text-3xl font-serif text-[#0B1F3A] mb-5 leading-snug group-hover:text-[#C9A227] transition-colors">
+                                    Financial Health Review Framework
+                                </h4>
+
+                                <p className="text-gray-600 text-[15px] leading-relaxed mb-8">
+                                    This guide explains how to interpret financial statements and assess operational stability through structured analysis beyond profit numbers.
+                                </p>
+
+                                <div className="bg-[#F8F9FA] rounded-2xl p-6 border border-gray-100 mb-8 flex-grow">
+                                    <h5 className="text-[11px] font-extrabold text-[#0B1F3A] uppercase tracking-widest mb-4 flex items-center gap-2">
+                                        Inside This Guide
+                                    </h5>
+                                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-4 text-[13px] text-gray-600 font-medium">
+                                        <li className="flex gap-2 items-start"><span className="text-[#C9A227] mt-0.5">•</span> Reading the P&L</li>
+                                        <li className="flex gap-2 items-start"><span className="text-[#C9A227] mt-0.5">•</span> Cash flow analysis</li>
+                                        <li className="flex gap-2 items-start"><span className="text-[#C9A227] mt-0.5">•</span> Cost structure evaluation</li>
+                                        <li className="flex gap-2 items-start"><span className="text-[#C9A227] mt-0.5">•</span> Liquidity indicators</li>
+                                    </ul>
+                                </div>
+
+                                <div className="border-t border-gray-100 pt-6 mt-auto">
+                                    <Link href="/knowledge-bank/financial-health-review" className="inline-flex items-center justify-center w-full px-6 py-4 bg-[#0B1F3A] text-white rounded-xl font-bold uppercase tracking-wider text-[11px] hover:bg-[#C9A227] transition-colors duration-300 group/btn shadow-md hover:shadow-lg">
+                                        Review Framework
+                                        <ArrowRight size={16} className="ml-2 transform group-hover/btn:translate-x-1 transition-transform" />
+                                    </Link>
+                                </div>
+                            </div>
+                        </ScrollAnimation>
+
                     </div>
                 </div>
             </section>
@@ -236,7 +311,7 @@ export default function KnowledgeBankPage() {
                                 </div>
 
                                 <div className="mt-8">
-                                    <Link href="/knowledge-bank/income-tax-filing" className="inline-flex items-center text-white font-bold uppercase tracking-wider text-sm hover:text-[#C9A227] transition-colors border-b border-white/20 hover:border-[#C9A227] pb-1 group/btn">
+                                    <Link href="/consultation?type=individual" className="inline-flex items-center text-white font-bold uppercase tracking-wider text-sm hover:text-[#C9A227] transition-colors border-b border-white/20 hover:border-[#C9A227] pb-1 group/btn">
                                         Begin Tax Basics
                                         <ArrowRight size={16} className="ml-2 transform group-hover/btn:translate-x-1 transition-transform" />
                                     </Link>
@@ -263,7 +338,7 @@ export default function KnowledgeBankPage() {
                                 </div>
 
                                 <div className="mt-8">
-                                    <Link href="/knowledge-bank/business-foundations" className="inline-flex items-center text-white font-bold uppercase tracking-wider text-sm hover:text-[#C9A227] transition-colors border-b border-white/20 hover:border-[#C9A227] pb-1 group/btn">
+                                    <Link href="/consultation?type=startup" className="inline-flex items-center text-white font-bold uppercase tracking-wider text-sm hover:text-[#C9A227] transition-colors border-b border-white/20 hover:border-[#C9A227] pb-1 group/btn">
                                         Start Business Foundations
                                         <ArrowRight size={16} className="ml-2 transform group-hover/btn:translate-x-1 transition-transform" />
                                     </Link>
@@ -290,7 +365,7 @@ export default function KnowledgeBankPage() {
                                 </div>
 
                                 <div className="mt-8">
-                                    <Link href="/knowledge-bank/gst-compliance-sme" className="inline-flex items-center text-[#0B1F3A] font-bold uppercase tracking-wider text-sm hover:text-black transition-colors border-b border-[#0B1F3A]/30 hover:border-[#0B1F3A] pb-1 group/btn">
+                                    <Link href="/consultation?type=sme" className="inline-flex items-center text-[#0B1F3A] font-bold uppercase tracking-wider text-sm hover:text-black transition-colors border-b border-[#0B1F3A]/30 hover:border-[#0B1F3A] pb-1 group/btn">
                                         Explore GST Path
                                         <ArrowRight size={16} className="ml-2 transform group-hover/btn:translate-x-1 transition-transform" />
                                     </Link>
@@ -317,7 +392,7 @@ export default function KnowledgeBankPage() {
                                 </div>
 
                                 <div className="mt-8">
-                                    <Link href="/knowledge-bank/financial-health-review" className="inline-flex items-center text-white font-bold uppercase tracking-wider text-sm hover:text-[#C9A227] transition-colors border-b border-white/20 hover:border-[#C9A227] pb-1 group/btn">
+                                    <Link href="/consultation?type=sme" className="inline-flex items-center text-white font-bold uppercase tracking-wider text-sm hover:text-[#C9A227] transition-colors border-b border-white/20 hover:border-[#C9A227] pb-1 group/btn">
                                         Review Financial Health
                                         <ArrowRight size={16} className="ml-2 transform group-hover/btn:translate-x-1 transition-transform" />
                                     </Link>
